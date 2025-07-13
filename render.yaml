@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: delta-btc-bot
+    runtime: python
+    repo: https://github.com/anaygaonkar/delta-btc-bot
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python btc_bot.py
+    envVars:
+      - key: API_KEY
+        value: your_api_key_here
+      - key: API_SECRET
+        value: your_api_secret_here
